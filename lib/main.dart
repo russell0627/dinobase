@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'pages/home.dart';
+import 'services/theme/theme_service.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: App()));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends ConsumerWidget {
+  const App({super.key});
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeState = ref.watch(themeServiceProvider);
+
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomePage(title: 'Dinosaur Database'),
+      title: 'Dinobase',
+      theme: themeState.light,
+      darkTheme: themeState.dark,
+      themeMode: themeState.mode,
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(title: 'Dinobase'),
     );
   }
 }

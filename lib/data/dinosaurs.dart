@@ -1,8 +1,8 @@
-import 'package:dinobase/models/dinosaur.dart';
+import '../models/dinosaur.dart';
 
 const List<Dinosaur> dinosaurs = [
   Dinosaur(
-    genusTitle: "Triceratops",
+    genus: "Triceratops",
     diet: Diet.herbivore,
     species: ["horridus", "prorsus"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -18,9 +18,9 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Agathaumas",
+    genus: "Agathaumas",
     diet: Diet.herbivore,
-    species: [],
+    species: ["sylvestris"],
     timePeriods: [TimePeriod.lateCretaceous],
     classification: [
       TaxonomicRank.dinosauria,
@@ -34,7 +34,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Eotriceratops",
+    genus: "Eotriceratops",
     diet: Diet.herbivore,
     species: ["xerinsularis"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -50,7 +50,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Nedoceratops",
+    genus: "Nedoceratops",
     diet: Diet.herbivore,
     species: ["hatcheri"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -66,7 +66,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Ojoceratops",
+    genus: "Ojoceratops",
     diet: Diet.herbivore,
     species: ["fowleri"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -82,7 +82,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Regaliceratops",
+    genus: "Regaliceratops",
     diet: Diet.herbivore,
     species: ["peterhewsi"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -98,7 +98,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Torosaurus",
+    genus: "Torosaurus",
     diet: Diet.herbivore,
     species: ["latus"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -114,7 +114,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Dynamoterror",
+    genus: "Dynamoterror",
     diet: Diet.carnivore,
     species: ["dynastes"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -127,7 +127,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Lythronax",
+    genus: "Lythronax",
     diet: Diet.carnivore,
     species: ["argestes"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -140,7 +140,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Nanuqsaurus",
+    genus: "Nanuqsaurus",
     diet: Diet.carnivore,
     species: ["hoglundi"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -153,7 +153,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Tarbosaurus",
+    genus: "Tarbosaurus",
     diet: Diet.carnivore,
     species: ["bataar"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -166,7 +166,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Teratophoneus",
+    genus: "Teratophoneus",
     diet: Diet.carnivore,
     species: ["curriei"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -179,7 +179,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Tyrannosaurus",
+    genus: "Tyrannosaurus",
     diet: Diet.carnivore,
     species: ["rex"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -192,7 +192,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Zhuchengtyrannus",
+    genus: "Zhuchengtyrannus",
     diet: Diet.carnivore,
     species: ["magnus"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -205,7 +205,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Daspletosaurini",
+    genus: "Daspletosaurini",
     diet: Diet.carnivore,
     species: ["torosus"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -218,7 +218,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Alioramus",
+    genus: "Alioramus",
     diet: Diet.carnivore,
     species: ["remotus"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -232,7 +232,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Qianzhousaurus",
+    genus: "Qianzhousaurus",
     diet: Diet.carnivore,
     species: ["sinensis"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -246,7 +246,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Parasaurolophus",
+    genus: "Parasaurolophus",
     diet: Diet.herbivore,
     species: ["walkeri"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -260,7 +260,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Adelolophus",
+    genus: "Adelolophus",
     diet: Diet.herbivore,
     species: ["hutchisoni"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -274,7 +274,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Angulomastacator",
+    genus: "Angulomastacator",
     diet: Diet.herbivore,
     species: ["daviesi"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -288,7 +288,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Charonosaurus",
+    genus: "Charonosaurus",
     diet: Diet.herbivore,
     species: ["jiaynensis"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -302,7 +302,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Tlatolopus",
+    genus: "Tlatolopus",
     diet: Diet.herbivore,
     species: ["galorum"],
     timePeriods: [TimePeriod.lateCretaceous],
@@ -316,7 +316,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Stegosaurus",
+    genus: "Stegosaurus",
     diet: Diet.herbivore,
     species: ["ungulatus", "sulcatus"],
     timePeriods: [TimePeriod.lateJurassic],
@@ -330,7 +330,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Kentrosaurus",
+    genus: "Kentrosaurus",
     diet: Diet.herbivore,
     species: ["aethiopicus"],
     timePeriods: [TimePeriod.lateJurassic],
@@ -344,7 +344,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Loricatosaurus",
+    genus: "Loricatosaurus",
     diet: Diet.herbivore,
     species: ["priscus"],
     timePeriods: [TimePeriod.lateJurassic],
@@ -358,7 +358,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Mongolostegus",
+    genus: "Mongolostegus",
     diet: Diet.herbivore,
     species: ["exspectabilis"],
     timePeriods: [TimePeriod.lateJurassic],
@@ -372,7 +372,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Paranthodon",
+    genus: "Paranthodon",
     diet: Diet.herbivore,
     species: ["africanus"],
     timePeriods: [TimePeriod.lateJurassic],
@@ -386,7 +386,7 @@ const List<Dinosaur> dinosaurs = [
     ],
   ),
   Dinosaur(
-    genusTitle: "Tuojiangosaurus",
+    genus: "Tuojiangosaurus",
     diet: Diet.herbivore,
     species: ["multispinus"],
     timePeriods: [TimePeriod.lateJurassic],

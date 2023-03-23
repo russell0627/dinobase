@@ -13,7 +13,7 @@ class LogoDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(text[1], style: TextStyle(
+        Text(text.first, style: TextStyle(
           fontFamily: fontFamily,
         ),),
         Padding(
@@ -22,7 +22,7 @@ class LogoDisplay extends StatelessWidget {
             backgroundImage: AssetImage("$imagePath$imageName"),
           ),
         ),
-        Text(text[2], style: TextStyle(fontFamily: fontFamily))
+        Text(text.last, style: TextStyle(fontFamily: fontFamily))
       ],
     );
   }

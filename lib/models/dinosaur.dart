@@ -1,17 +1,25 @@
-class Dinosaur {
-  final String genusTitle;
+class Dinosaur implements Comparable<Dinosaur> {
+  final String genus;
   final Diet diet;
   final List<String> species;
   final List<TimePeriod> timePeriods;
   final List<TaxonomicRank> classification;
 
   const Dinosaur({
-    required this.genusTitle,
+    required this.genus,
     required this.diet,
     required this.species,
     required this.timePeriods,
     required this.classification,
   });
+
+  String get timePeriodsDisplay => timePeriods.toString().replaceAll('[', '').replaceAll(']', '');
+
+  @override
+  String toString() => "$genus, $diet, $species, $timePeriods";
+
+  @override
+  int compareTo(Dinosaur other) => genus.compareTo(other.genus);
 }
 
 const List<Dinosaur> dinosaurs = [];

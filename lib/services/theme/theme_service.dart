@@ -51,7 +51,6 @@ class ThemeService extends _$ThemeService {
         ),
         visualDensity: FlexColorScheme.comfortablePlatformDensity,
       ),
-
     );
   }
 
