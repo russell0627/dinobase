@@ -15,7 +15,8 @@ class Dinosaur implements Comparable<Dinosaur> {
     required this.classification,
   });
 
-  String get timePeriodsDisplay => timePeriods.toString().replaceAll('[', '').replaceAll(']', '').replaceAll("TimePeriod.", '').titleCase;
+  String get timePeriodsDisplay =>
+      timePeriods.map((e) => e.name.titleCase).toString().replaceAll('[', '').replaceAll(']', '');
 
   @override
   String toString() => "$genus, $diet, $species, $timePeriods";
@@ -24,25 +25,13 @@ class Dinosaur implements Comparable<Dinosaur> {
   int compareTo(Dinosaur other) => genus.compareTo(other.genus);
 
   TaxonomicRank findSuborder() {
-    if (classification.contains(TaxonomicRank.ankylosauria)) {
-      return TaxonomicRank.ankylosauria;
-    } else if (classification.contains(TaxonomicRank.ceratopsia)) {
-      return TaxonomicRank.ceratopsia;
-    } else if (classification.contains(TaxonomicRank.sauropoda)) {
-      return TaxonomicRank.ceratopsia;
-    } else if (classification.contains(TaxonomicRank.prosauropoda)) {
-      return TaxonomicRank.ceratopsia;
-    } else if (classification.contains(TaxonomicRank.theropoda)) {
-      return TaxonomicRank.ceratopsia;
-    } else if (classification.contains(TaxonomicRank.pachycephalosauria)) {
-      return TaxonomicRank.ceratopsia;
-    } else if (classification.contains(TaxonomicRank.stegosauria)) {
-      return TaxonomicRank.ceratopsia;
-    }else if (classification.contains(TaxonomicRank.ornithopoda)) {
-      return TaxonomicRank.ornithopoda;
-    } else {
-      return TaxonomicRank.dinosauria;
+    for (final suborder in TaxonomicRank.suborders) {
+      if (classification.contains(suborder)) {
+        return suborder;
+      }
     }
+
+    return TaxonomicRank.dinosauria;
   }
 }
 
@@ -80,7 +69,18 @@ enum TaxonomicRank {
   alioramini,
   stegosauridae,
   stegosaurinae,
-  dacentrurinae,
+  dacentrurinae;
+
+  static List<TaxonomicRank> suborders = [
+    TaxonomicRank.ankylosauria,
+    TaxonomicRank.ceratopsia,
+    TaxonomicRank.ornithopoda,
+    TaxonomicRank.pachycephalosauria,
+    TaxonomicRank.prosauropoda,
+    TaxonomicRank.sauropoda,
+    TaxonomicRank.stegosauria,
+    TaxonomicRank.theropoda,
+  ];
 }
 
 enum Category {

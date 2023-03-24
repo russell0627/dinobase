@@ -20,116 +20,125 @@ class ThemeService extends _$ThemeService {
   @override
   ThemeState build() {
     return ThemeState(
-      light: FlexThemeData.light(
-        scheme: colorScheme,
-        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
-        blendLevel: 9,
-        subThemesData: const FlexSubThemesData(
-          blendOnLevel: 10,
-          blendOnColors: false,
-          toggleButtonsRadius: 0.0,
-          unselectedToggleIsColored: true,
-          inputDecoratorRadius: 40.0,
-          chipRadius: 1.0,
-          tooltipSchemeColor: SchemeColor.primaryContainer,
-          tooltipOpacity: 0.52,
+      light: _modTheme(
+        FlexThemeData.light(
+          scheme: colorScheme,
+          surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+          blendLevel: 9,
+          subThemesData: const FlexSubThemesData(
+            blendOnLevel: 10,
+            blendOnColors: false,
+            toggleButtonsRadius: 0.0,
+            unselectedToggleIsColored: true,
+            inputDecoratorRadius: 40.0,
+            chipRadius: 1.0,
+            tooltipSchemeColor: SchemeColor.primaryContainer,
+            tooltipOpacity: 0.52,
+          ),
+          visualDensity: FlexColorScheme.comfortablePlatformDensity,
         ),
-        visualDensity: FlexColorScheme.comfortablePlatformDensity,
       ),
-      dark: FlexThemeData.dark(
-        scheme: colorScheme,
-        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
-        blendLevel: 15,
-        subThemesData: const FlexSubThemesData(
-          blendOnLevel: 20,
-          toggleButtonsRadius: 0.0,
-          unselectedToggleIsColored: true,
-          inputDecoratorRadius: 40.0,
-          chipRadius: 1.0,
-          tooltipSchemeColor: SchemeColor.primaryContainer,
-          tooltipOpacity: 0.52,
+      dark: _modTheme(
+        FlexThemeData.dark(
+          scheme: colorScheme,
+          surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+          blendLevel: 15,
+          subThemesData: const FlexSubThemesData(
+            blendOnLevel: 20,
+            toggleButtonsRadius: 0.0,
+            unselectedToggleIsColored: true,
+            inputDecoratorRadius: 40.0,
+            chipRadius: 1.0,
+            tooltipSchemeColor: SchemeColor.primaryContainer,
+            tooltipOpacity: 0.52,
+          ),
+          visualDensity: FlexColorScheme.comfortablePlatformDensity,
         ),
-        visualDensity: FlexColorScheme.comfortablePlatformDensity,
       ),
     );
   }
 
   /// Use this to customize the color scheme (current code is an example).
   ThemeData _modTheme(ThemeData data) {
-    final textTheme = _buildTextTheme(data.textTheme);
+    // final textTheme = _buildTextTheme(data.textTheme);
 
     return data.copyWith(
-      textTheme: textTheme,
+      // textTheme: textTheme,
+      appBarTheme: data.appBarTheme.copyWith(
+        titleTextStyle: const TextStyle(
+          fontFamily: "dinosauce",
+        ),
+      ),
     );
   }
 
   /// Use this to customize the text theme (current code is an example).
-  TextTheme _buildTextTheme(TextTheme base) {
-    return base.copyWith(
-      displayLarge: const TextStyle(
-        color: primaryColor,
-        fontSize: 26,
-        fontFamily: 'HeavyMetal2',
-      ),
-      displayMedium: const TextStyle(
-        color: primaryColor,
-        fontSize: 24,
-        fontFamily: 'HeavyMetal2',
-      ),
-      displaySmall: const TextStyle(
-        color: primaryColor,
-        fontSize: 22,
-        fontFamily: 'HeavyMetal2',
-      ),
-      headlineLarge: const TextStyle(
-        color: primaryVariant,
-        fontSize: 21,
-        fontFamily: 'Digital7',
-      ),
-      headlineMedium: const TextStyle(
-        color: primaryVariant,
-        fontSize: 20,
-        fontFamily: 'Digital7',
-      ),
-      headlineSmall: const TextStyle(
-        color: primaryColor,
-        fontSize: 18,
-        fontFamily: 'HeavyMetal2',
-      ),
-      titleLarge: const TextStyle(
-        color: primaryColor,
-        fontSize: 16,
-        fontFamily: 'HeavyMetal2',
-      ),
-      titleMedium: const TextStyle(
-        // TextField default
-        color: primaryVariant,
-        fontSize: 14,
-        fontFamily: 'HeavyMetal2',
-      ),
-      titleSmall: const TextStyle(
-        color: primaryColor,
-        fontSize: 12,
-        fontFamily: 'HeavyMetal2',
-      ),
-      bodyLarge: const TextStyle(
-        color: primaryVariant,
-        fontSize: 12,
-        fontFamily: 'FiraCodeMed',
-      ),
-      bodyMedium: const TextStyle(
-        // Text default
-        color: primaryVariant,
-        fontSize: 12,
-        fontFamily: 'FiraCodeLight',
-      ),
-      bodySmall: const TextStyle(
-        color: primaryVariant,
-        fontSize: 10,
-        fontFamily: 'HeavyMetal5',
-      ),
-    );
-  }
+  // TextTheme _buildTextTheme(TextTheme base) {
+  //   return base.copyWith(
+  //     displayLarge: const TextStyle(
+  //       color: primaryColor,
+  //       fontSize: 26,
+  //       fontFamily: 'HeavyMetal2',
+  //     ),
+  //     displayMedium: const TextStyle(
+  //       color: primaryColor,
+  //       fontSize: 24,
+  //       fontFamily: 'HeavyMetal2',
+  //     ),
+  //     displaySmall: const TextStyle(
+  //       color: primaryColor,
+  //       fontSize: 22,
+  //       fontFamily: 'HeavyMetal2',
+  //     ),
+  //     headlineLarge: const TextStyle(
+  //       color: primaryVariant,
+  //       fontSize: 21,
+  //       fontFamily: 'Digital7',
+  //     ),
+  //     headlineMedium: const TextStyle(
+  //       color: primaryVariant,
+  //       fontSize: 20,
+  //       fontFamily: 'Digital7',
+  //     ),
+  //     headlineSmall: const TextStyle(
+  //       color: primaryColor,
+  //       fontSize: 18,
+  //       fontFamily: 'HeavyMetal2',
+  //     ),
+  //     titleLarge: const TextStyle(
+  //       color: primaryColor,
+  //       fontSize: 16,
+  //       fontFamily: 'HeavyMetal2',
+  //     ),
+  //     titleMedium: const TextStyle(
+  //       // TextField default
+  //       color: primaryVariant,
+  //       fontSize: 14,
+  //       fontFamily: 'HeavyMetal2',
+  //     ),
+  //     titleSmall: const TextStyle(
+  //       color: primaryColor,
+  //       fontSize: 12,
+  //       fontFamily: 'HeavyMetal2',
+  //     ),
+  //     bodyLarge: const TextStyle(
+  //       color: primaryVariant,
+  //       fontSize: 12,
+  //       fontFamily: 'FiraCodeMed',
+  //     ),
+  //     bodyMedium: const TextStyle(
+  //       // Text default
+  //       color: primaryVariant,
+  //       fontSize: 12,
+  //       fontFamily: 'FiraCodeLight',
+  //     ),
+  //     bodySmall: const TextStyle(
+  //       color: primaryVariant,
+  //       fontSize: 10,
+  //       fontFamily: 'HeavyMetal5',
+  //     ),
+  //   );
+  // }
 
   void onModeChange(ThemeMode value) {
     state = state.copyWith(mode: value);
