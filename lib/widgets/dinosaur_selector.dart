@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recase/recase.dart';
 
 import '../models/dinosaur.dart';
 
@@ -34,7 +35,8 @@ class _DinosaurTile extends StatelessWidget {
       child: ListTile(
         onTap: () => onPressed(dinosaur),
         title: Text(dinosaur.genus),
-        subtitle: Text("Diet: ${dinosaur.diet.name} Time Period(s): ${dinosaur.timePeriodsDisplay}"),
+        subtitle: Text(
+            "Diet: ${dinosaur.diet.name.titleCase} Time Period(s): ${dinosaur.timePeriodsDisplay} Suborder: ${dinosaur.findSuborder().name.titleCase}"),
       ),
     );
   }

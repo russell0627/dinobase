@@ -1,3 +1,5 @@
+import 'package:recase/recase.dart';
+
 class Dinosaur implements Comparable<Dinosaur> {
   final String genus;
   final Diet diet;
@@ -13,13 +15,35 @@ class Dinosaur implements Comparable<Dinosaur> {
     required this.classification,
   });
 
-  String get timePeriodsDisplay => timePeriods.toString().replaceAll('[', '').replaceAll(']', '');
+  String get timePeriodsDisplay => timePeriods.toString().replaceAll('[', '').replaceAll(']', '').replaceAll("TimePeriod.", '').titleCase;
 
   @override
   String toString() => "$genus, $diet, $species, $timePeriods";
 
   @override
   int compareTo(Dinosaur other) => genus.compareTo(other.genus);
+
+  TaxonomicRank findSuborder() {
+    if (classification.contains(TaxonomicRank.ankylosauria)) {
+      return TaxonomicRank.ankylosauria;
+    } else if (classification.contains(TaxonomicRank.ceratopsia)) {
+      return TaxonomicRank.ceratopsia;
+    } else if (classification.contains(TaxonomicRank.sauropoda)) {
+      return TaxonomicRank.ceratopsia;
+    } else if (classification.contains(TaxonomicRank.prosauropoda)) {
+      return TaxonomicRank.ceratopsia;
+    } else if (classification.contains(TaxonomicRank.theropoda)) {
+      return TaxonomicRank.ceratopsia;
+    } else if (classification.contains(TaxonomicRank.pachycephalosauria)) {
+      return TaxonomicRank.ceratopsia;
+    } else if (classification.contains(TaxonomicRank.stegosauria)) {
+      return TaxonomicRank.ceratopsia;
+    }else if (classification.contains(TaxonomicRank.ornithopoda)) {
+      return TaxonomicRank.ornithopoda;
+    } else {
+      return TaxonomicRank.dinosauria;
+    }
+  }
 }
 
 const List<Dinosaur> dinosaurs = [];
@@ -31,6 +55,8 @@ enum TaxonomicRank {
   cerapoda,
   thyreophora,
   sauropodomorpha,
+  sauropoda,
+  prosauropoda,
   theropoda,
   marginocephalia,
   ankylosauria,
