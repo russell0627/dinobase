@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recase/recase.dart';
 
 import '../models/dinosaur.dart';
+import '../utils/utils.dart';
 
 class DinosaurSelector extends StatelessWidget {
   final List<Dinosaur> options;
@@ -36,7 +37,7 @@ class _DinosaurTile extends StatelessWidget {
         onTap: () => onPressed(dinosaur),
         title: Text(dinosaur.genus),
         subtitle: Text(
-            "Diet: ${dinosaur.diet.name.titleCase} Time Period(s): ${dinosaur.timePeriodsDisplay} Suborder: ${dinosaur.findSuborder().name.titleCase}"),
+            "Diet: ${dinosaur.diet.name.titleCase} Time Period(s): ${enumList(dinosaur.timePeriods)} Suborder: ${dinosaur.findSuborder().name.titleCase}"),
       ),
     );
   }

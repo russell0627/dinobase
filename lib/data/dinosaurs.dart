@@ -258,6 +258,7 @@ const List<Dinosaur> dinosaurs = [
       TaxonomicRank.lambeosaurinae,
       TaxonomicRank.parasaurolophini,
     ],
+    imageFileName: "parasaurolophus.jpg"
   ),
   Dinosaur(
     genus: "Adelolophus",

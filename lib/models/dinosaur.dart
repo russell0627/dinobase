@@ -6,6 +6,7 @@ class Dinosaur implements Comparable<Dinosaur> {
   final List<String> species;
   final List<TimePeriod> timePeriods;
   final List<TaxonomicRank> classification;
+  final String? imageFileName;
 
   const Dinosaur({
     required this.genus,
@@ -13,10 +14,10 @@ class Dinosaur implements Comparable<Dinosaur> {
     required this.species,
     required this.timePeriods,
     required this.classification,
+    this.imageFileName,
   });
 
-  String get timePeriodsDisplay =>
-      timePeriods.map((e) => e.name.titleCase).toString().replaceAll('[', '').replaceAll(']', '');
+  bool get hasImage => imageFileName != null;
 
   @override
   String toString() => "$genus, $diet, $species, $timePeriods";
