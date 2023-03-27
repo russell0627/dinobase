@@ -11,7 +11,11 @@ class DinosaurDetails extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selectedDino = ref.watch(dinosaurBrowserCtrlProvider.select((value) => value.selectedDinosaur))!;
+    final selectedDino = ref.watch(dinosaurBrowserCtrlProvider.select((value) => value.selectedDinosaur));
+
+    if (selectedDino == null) {
+      return const SizedBox.shrink();
+    }
 
     return Center(
       child: Column(
